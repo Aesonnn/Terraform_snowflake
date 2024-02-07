@@ -1,3 +1,6 @@
+# Modules are used to create reusable components with Terraform.
+# All the modules necessary to create desired resources are defined in this file.
+# The source attribute is the path to the module.
 module "warehouse" {
     source = "./modules/warehouse"
     warehouse_name = var.warehouse_name

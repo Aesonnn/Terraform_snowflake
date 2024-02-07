@@ -45,6 +45,7 @@ resource "snowflake_grant_privileges_to_role" "car_maintenance_role_g3" {
   depends_on = [snowflake_role.car_maintenance_role]
 }
 
+# Grant select on the table to the role - car_maintenance_role
 resource "snowflake_table_grant" "select_grant" {
   database_name = var.database_name
   schema_name   = var.schema_name

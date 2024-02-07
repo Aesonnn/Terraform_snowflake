@@ -14,6 +14,7 @@ variable "table_columns" {
     type = string
   }))
 
+  # Default value for the table columns
   default = [
     {
       name = "ID"
