@@ -10,9 +10,9 @@ terraform {
 # Variables are defined in variables.tf and the value is set in terraform.tfvar
 provider "snowflake" {
     account = var.snowflake_account # The account name.
-    user = var.snowflake_user
-    password = var.snowflake_password
-    role = var.snowflake_role
+    user = var.snowflake_user # The username to use for authentication.
+    password = var.snowflake_password # The password to use for authentication.
+    role = var.snowflake_role # The role to use for authentication.
 }
 
 # Create a Snowflake Warehouse
@@ -91,11 +91,26 @@ resource "snowflake_grant_privileges_to_role" "car_maintenance_role_g3" {
   }
 }
 
-# Grant select on the table to the role - car_maintenance_role
-resource "snowflake_table_grant" "select_grant" {
-  database_name = snowflake_database.maksims_database.name
-  schema_name   = snowflake_schema.maksims_schema.name
-  table_name    = snowflake_table.car_table.name
-  privilege     = "SELECT"
-  roles         = [snowflake_role.car_maintenance_role.name]
+
+# Creating a new user and granting the role to the user
+resource "snowflake_user" "task_user" {
+  name     = "task_user"
+  login_name = "task_user"
+  password = var.dummy_password
 }
+
+resource "snowflake_role_grants" "dummy_role_grants" {
+  role_name = snowflake_role.car_maintenance_role.name
+  users     = [snowflake_user.task_user.name]
+}
+
+# Grant select on the table to the role - car_maintenance_role
+# Should be uncommented after the role and user are created
+
+# resource "snowflake_table_grant" "select_grant" {
+#   database_name = snowflake_database.maksims_database.name
+#   schema_name   = snowflake_schema.maksims_schema.name
+#   table_name    = snowflake_table.car_table.name
+#   privilege     = "SELECT"
+#   roles         = [snowflake_role.car_maintenance_role.name]
+# }
