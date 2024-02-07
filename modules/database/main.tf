@@ -6,7 +6,7 @@ terraform {
         }
     }
 }
-
+# Create a Database
 resource "snowflake_database" "maksims_database" {
   name = var.database_name
 }

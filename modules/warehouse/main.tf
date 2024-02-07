@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+# Create a Warehouse
 resource "snowflake_warehouse" "maksims_warehouse" {
   name           = var.warehouse_name
   warehouse_size = var.warehouse_size
