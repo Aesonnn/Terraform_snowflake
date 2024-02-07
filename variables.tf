@@ -1,38 +1,38 @@
 
 variable "snowflake_user" {
-      type    = string
+  type = string
 }
 variable "snowflake_password" {
-      type    = string
+  type = string
 }
 variable "snowflake_role" {
-      type    = string
+  type = string
 }
 variable "snowflake_account" {
-      type    = string
+  type = string
 }
 variable "snowflake_region" {
-      type    = string
+  type = string
 }
 variable "warehouse_name" {
-      type    = string
+  type = string
 }
 variable "warehouse_size" {
-      type    = string
+  type = string
 }
 variable "database_name" {
-      type    = string
+  type = string
 }
 variable "schema_name" {
-      type    = string
+  type = string
 }
 variable "table_name" {
-      type    = string
+  type = string
 }
 variable "role_name" {
-      type    = string
+  type = string
 }
 
 variable "dummy_password" {
-      type    = string
+  type = string
 }
