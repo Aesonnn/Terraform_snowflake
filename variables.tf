@@ -32,6 +32,9 @@ variable "table_name" {
 variable "role_name" {
   type = string
 }
+variable "new_user_name" {
+  type = string
+}
 
 variable "dummy_password" {
   type = string

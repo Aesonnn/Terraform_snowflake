@@ -98,8 +98,8 @@ resource "snowflake_grant_privileges_to_role" "car_maintenance_role_g3" {
 
 # Creating a new user and granting the role to the user
 resource "snowflake_user" "task_user" {
-  name       = "task_user"
-  login_name = "task_user"
+  name       = var.new_user_name
+  login_name = var.new_user_name
   password   = var.dummy_password
 }
 
