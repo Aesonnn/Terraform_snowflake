@@ -38,20 +38,20 @@ resource "snowflake_table" "car_table" {
   schema   = snowflake_schema.maksims_schema.name
   name     = var.table_name
   column {
-    name = "Brand"
-    type = "VARCHAR(100)"
+    name = "ID"
+    type = "INTEGER"
   }
   column {
     name = "Make"
     type = "VARCHAR(100)"
   }
   column {
-    name = "Year"
-    type = "NUMBER"
+    name = "checkedin_at"
+    type = "TIMESTAMP_LTZ"
   }
   column {
     name = "Status"
-    type = "VARCHAR(150)"
+    type = "BOOLEAN"
   }
 }
 
