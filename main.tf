@@ -109,7 +109,6 @@ resource "snowflake_role_grants" "dummy_role_grants" {
 }
 
 # Grant select on the table to the role - car_maintenance_role
-# Should be uncommented after the role and user are created
 
 resource "snowflake_table_grant" "select_grant" {
   database_name = snowflake_database.maksims_database.name
