@@ -25,5 +25,5 @@ If needed, the table colums can also be changed in variables.tf file in table mo
 - A dedicated Snowflake database.
 - A schema within the database.
 - A table within the schema with various data types.
-- A role and a user with permissions for database, schema, and warehouse access, and select privileges on the table.
+- A role with permissions for database, schema, and warehouse access, and select privileges on the table.
 
