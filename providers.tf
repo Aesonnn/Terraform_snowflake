@@ -2,7 +2,7 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.76"
+      version = "~> 0.85"
     }
   }
 }
@@ -13,4 +13,4 @@ provider "snowflake" {
   user     = var.snowflake_user     # The username to use for authentication.
   password = var.snowflake_password # The password to use for authentication.
   role     = var.snowflake_role     # The role to use for authentication.
-}   
+}  
